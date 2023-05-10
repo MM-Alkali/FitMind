@@ -1,4 +1,4 @@
-cd # week-8-node-sq012-mini-project
+``` FitMind, which is a health-tech app that connects users with verified physical fitness experts and therapist, especially in Nigeria, where it can be tough to find quality body and mind care services ```
 
 To begin
 
