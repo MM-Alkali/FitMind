@@ -1,11 +1,16 @@
 "use strict";
-// import { Request, Response } from "express"
-// import userInstance from "../models/userModel"
-// import Joi from "joi";
-// import { UUIDV4 } from "sequelize";
-// import bcrypt from "bcrypt";
-// import { v4 as uuid } from "uuid";
-// import db from "../database/db.config";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createUser = void 0;
+const sequelize_1 = require("sequelize");
 // import { createToken } from "../database/storage";
 // const registrationSchema = Joi.object({
 //   name: Joi.string().required(),
@@ -19,7 +24,14 @@
 //   password: Joi.string().min(5).max(16).required(),
 //   password2: Joi.string().valid(Joi.ref('password')).required(),
 // });
-// const createUser = async (req: Request, res: Response) => {
+const createUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id, name, dob, email, password, gender, country, city, interests, emergencyContact, } = req.body;
+        const myId = sequelize_1.UUIDV4;
+    }
+    catch (error) { }
+});
+exports.createUser = createUser;
 // }
 // export {createUser}
 // export const createUser = async (req: Request, res: Response) => {

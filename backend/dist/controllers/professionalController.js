@@ -17,6 +17,11 @@ const { v4: uuidv4 } = require("uuid");
 const professionalModel_1 = require("../models/professionalModel");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const fs = require("fs");
+var ProfessionalStatus;
+(function (ProfessionalStatus) {
+    ProfessionalStatus["Pending"] = "Pending";
+    ProfessionalStatus["Verified"] = "Verified";
+})(ProfessionalStatus || (ProfessionalStatus = {}));
 const getProfessional = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const professionals = yield professionalModel_1.ProfessionalInstance.findAll({
@@ -58,6 +63,7 @@ const getProfessionalById = (req, res) => __awaiter(void 0, void 0, void 0, func
 });
 exports.getProfessionalById = getProfessionalById;
 const createProfessional = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a, _b, _c, _d;
     try {
         let fields = req.fields;
         let files = req.files;
@@ -98,17 +104,20 @@ const createProfessional = (req, res) => __awaiter(void 0, void 0, void 0, funct
             }
             const encryptedPassword = yield bcrypt_1.default.hash(password, 10);
             let fileArray = Array.isArray(files) ? files : [files];
-            let path = fileArray[0].CV.path;
+            let cvPath = (_b = (_a = fileArray[0]) === null || _a === void 0 ? void 0 : _a.CV) === null || _b === void 0 ? void 0 : _b.path;
+            let imagePath = (_d = (_c = fileArray[0]) === null || _c === void 0 ? void 0 : _c.image) === null || _d === void 0 ? void 0 : _d.path;
             const newProfessional = yield professionalModel_1.ProfessionalInstance.create({
                 id: uuidv4(),
                 name: name,
                 email: email,
                 password: encryptedPassword,
-                CV: path,
+                image: imagePath,
+                CV: cvPath,
                 availability: availability,
                 rate: rate,
                 phoneNumber: phoneNumber,
                 linkedin: linkedin,
+                status: ProfessionalStatus.Pending,
             });
             return res.status(201).json({
                 message: "Professional has been created",

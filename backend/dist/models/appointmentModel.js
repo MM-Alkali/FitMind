@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppointmentInstance = void 0;
 const sequelize_1 = require("sequelize");
 const db_config_1 = __importDefault(require("../database/db.config"));
-const professionalModel_1 = require("./professionalModel");
-const userModel_1 = require("./userModel");
 class AppointmentInstance extends sequelize_1.Model {
     static find(arg0) {
         throw new Error("Method not implemented.");
@@ -48,20 +46,18 @@ AppointmentInstance.init({
         type: sequelize_1.DataTypes.STRING,
         allowNull: true,
     },
-    //   userId: {
-    //     type: DataTypes.UUIDV4
-    // }
+    status: {
+        type: sequelize_1.DataTypes.STRING,
+    },
+    // userId: {
+    //   type: DataTypes.UUIDV4,
+    // },
+    professionalId: {
+        type: sequelize_1.DataTypes.UUIDV4,
+    },
 }, {
     sequelize: db_config_1.default,
     tableName: "appointment",
 });
 exports.default = AppointmentInstance;
-professionalModel_1.ProfessionalInstance.hasMany(AppointmentInstance, {
-    foreignKey: "userId",
-    as: "appointments",
-});
-AppointmentInstance.belongsTo(userModel_1.UserInstance, {
-    foreignKey: "userId",
-    as: "user",
-});
 //# sourceMappingURL=appointmentModel.js.map
