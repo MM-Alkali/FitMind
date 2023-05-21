@@ -6,7 +6,7 @@ import "./contact-us.css";
 const ContactUs = () => {
   return (
     <section id="contact-us">
-      <form action="https://formspree.io/f/xayzppbe" method="POST">
+      <form action="https://formspree.io/f/xyyavvla" method="POST">
         <InputField type="hidden" name="_subject" value="New Submission" />
         <h2>WE WOULD LOVE TO HEAR FROM YOU</h2>
         <label htmlFor="">Full Name</label>

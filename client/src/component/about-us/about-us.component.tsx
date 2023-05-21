@@ -38,21 +38,14 @@ const AboutUs = () => {
       <article className="welcome">
         <h3>HELLO {`${name}`}</h3>
         <p>
-          Welcome to <strong>HEALTHVIBES</strong> our mental health and fitness
-          community, where we believe that taking care of your mind and body is
-          essential for a happy and fulfilling life. We are here to support you
-          on your journey towards improved well-being and offer a safe space to
-          connect with others who share your goals. Let's work together to
-          achieve mental clarity, physical strength, and a balanced lifestyle.
-          We're glad you're here!
+          Welcome to <strong>FitMind</strong>, our community focused on mental health and fitness. We strongly believe that caring for both your mind and body is crucial for a happy and satisfying life. Our goal is to provide support along your journey towards enhanced well-being and provide a safe environment to connect with like-minded individuals who share your aspirations. Together, we can strive for mental clarity, physical strength, and a harmonious lifestyle. We're delighted to have you here!
         </p>
       </article>
       <aside>
         <div>
           <img src={therapy} alt="therapy session" className="service" />
           <p className="mental-health">
-            Our highly trained mental health professionals are waiting to listen
-            to you
+          Our team of highly trained mental health professionals is ready to lend an empathetic ear and provide support as you express yourself. We understand the importance of being heard and are here to actively listen to your thoughts, feelings, and concerns. Whether you need guidance, a sounding board, or someone to confide in, our dedicated professionals are here to support you on your mental health journey.
           </p>
           <a className="link-up" href="registrationuser">
             Speak to a therapist
@@ -61,7 +54,7 @@ const AboutUs = () => {
         <div>
           <img src={workout} alt="man working out" className="service" />
           <p className="fitness">
-            Our fitness experts are all fired up and excited to train with you
+          Our enthusiastic team of fitness experts is eager and ready to train alongside you. They are passionate about helping you achieve your fitness goals and are excited to share their knowledge and expertise. Whether you're just starting your fitness journey or looking to take it to the next level, our dedicated trainers will provide guidance, motivation, and customized workouts to keep you inspired and challenged. Get ready to sweat, push your limits, and achieve your fitness aspirations with our fired-up team by your side. Let's do this together!
           </p>
           <a className="link-up" href="registrationuser">
             Get in touch with a trainer
